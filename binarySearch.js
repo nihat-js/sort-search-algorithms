@@ -1,9 +1,12 @@
 function binarySearch(arr, number) {
   let result = arr
   while (true) {
-    result = binaryMethod(result, number)
+    result = binaryHelper(result, number)
     if (typeof result == "number") {
       return result
+    }
+    if (result.length == 0){
+      return -1
     }
   }
 
@@ -21,3 +24,6 @@ function binaryHelper(arr, number) {
     return arr.splice(0, middle)
   }
 }
+let testArr = [10, 20, 30, 60, 100, 120, 143, 312,542, ]
+
+console.log("Result is" + binarySearch(testArr,90))
